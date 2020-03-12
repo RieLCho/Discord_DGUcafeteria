@@ -13,11 +13,13 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content.startswith('!test'):
-        await message.channel.send('test!!!!')
+    if message.content.startswith('!학식'):
+        import DonggukCafeteria
+        result = str(DonggukCafeteria.parse_dgu_coop(2))
+        await message.channel.send(result)
 
     elif message.content.startswith('!say'):
         await message.channel.send('leave message')
 
 
-client.run('Njg2NTgxNDY4OTAxODAyMDM1.XmZU5w.mOfLEz8qJY-yfJpgCjSHxuGHB88')
+client.run('Njg2NTgxNDY4OTAxODAyMDM1.XmptKA.sf5JPNkXImQRcu6BIGCDZGHstd0')
