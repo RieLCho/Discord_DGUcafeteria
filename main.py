@@ -22,4 +22,4 @@ async def on_message(message):
         await message.channel.send('leave message')
 
 
-client.run('Njg2NTgxNDY4OTAxODAyMDM1.XmptKA.sf5JPNkXImQRcu6BIGCDZGHstd0')
+client.run('token')
