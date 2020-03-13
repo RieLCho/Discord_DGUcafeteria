@@ -24,4 +24,3 @@ def parse_dgu_coop(index):
     if result is "":
         result = "데이터가 없습니다 ㅠㅜ"
     return result
-print(parse_dgu_coop(3))
