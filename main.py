@@ -94,4 +94,4 @@ async def on_message(message):
     elif message.content.startswith('!동식명령어'):
         await message.channel.send('명령어 목록\n!상록원3층\n!상록원2층\n!상록원1층\n!그루터기\n!가든쿡\n!누리터\n!남산학사')
 
-client.run('token')
+client.run('Njg2NTgxNDY4OTAxODAyMDM1.Xmp-dQ.dzf0rehwy7-dgaZr2BJIdveWJyE')
