@@ -7,7 +7,6 @@ import datetime
 
 counter = 0
 
-
 def parse_dgu_coop(index):
     day_of_week = datetime.datetime.today().weekday() + 3
     # Sun = 2, Mon = 3, Tue = 4, Wen = 5, Thu = 6, Fri = 7, Sat = 8 (td index)
