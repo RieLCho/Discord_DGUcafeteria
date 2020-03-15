@@ -61,44 +61,59 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    global sangrokwon1f
-    global sangrokwon2fdinner
-    global sangrokwon2flunch
-    global sangrokwon3fdinner
-    global sangrokwon3flunch
-    global grutergi_dinner
-    global grutergi_lunch
-    global gardencook
-    global dormitory_dinner
-    global dormitory_lunch
+
     if message.content.startswith('!상록원3층'):
         if hour >= 14:  # 오후 2시 이후에는 석식 메뉴를 보여줌
             await message.channel.send(sangrokwon3fdinner)
         else:
             await message.channel.send(sangrokwon3flunch)
+    elif message.content.startswith('!석식상록원3층'):
+        await message.channel.send(sangrokwon3fdinner)
+    elif message.content.startswith('!중식상록원3층'):
+        await message.channel.send(sangrokwon3flunch)
+
     elif message.content.startswith('!상록원2층'):
         if hour >= 14:
             await message.channel.send(sangrokwon2fdinner)
         else:
             await message.channel.send(sangrokwon2flunch)
+    elif message.content.startswith('!석식상록원2층'):
+        await message.channel.send(sangrokwon2fdinner)
+    elif message.content.startswith('!중식상록원2층'):
+        await message.channel.send(sangrokwon2flunch)
     elif message.content.startswith('!상록원1층'):
         await message.channel.send(sangrokwon1f)
+
     elif message.content.startswith('!그루터기'):
         if hour >= 14:
             await message.channel.send(grutergi_lunch)
         else:
             await message.channel.send(grutergi_dinner)
+    elif message.content.startswith('!석식그루터기'):
+        await message.channel.send(grutergi_lunch)
+    elif message.content.startswith('!중식그루터기'):
+        await message.channel.send(grutergi_dinner)
+
     elif message.content.startswith('!가든쿡'):
         await message.channel.send(gardencook)
+
     elif message.content.startswith('!누리터'):
         await message.channel.send(nuriter)
+
     elif message.content.startswith('!남산학사'):
         if hour >= 14:
             await message.channel.send(dormitory_dinner)
         else:
             await message.channel.send(dormitory_lunch)
+    elif message.content.startswith('!석식남산학사'):
+        await message.channel.send(dormitory_dinner)
+    elif message.content.startswith('!중식남산학사'):
+        await message.channel.send(dormitory_lunch)
+
     elif message.content.startswith('!동식명령어'):
+        await message.channel.send('명령어 목록\n!상록원3층\n!상록원2층\n!상록원1층\n!그루터기\n!가든쿡\n!누리터\n!남산학사')
+    elif message.content.startswith('!동식아'):
         await message.channel.send('명령어 목록\n!상록원3층\n!상록원2층\n!상록원1층\n!그루터기\n!가든쿡\n!누리터\n!남산학사')
 
 
-client.run('Njg2NTgxNDY4OTAxODAyMDM1.Xmtt-w.tGLi0dQRXgmBypXVk5m6ZVvpAjo')
+client.run('token')
