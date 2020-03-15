@@ -55,7 +55,7 @@ def parse_dgu_coop(index):
         day_of_week -= 1
     elif index is 51:
         day_of_week -= 1
-    html = urlopen('https://dgucoop.dongguk.edu/store/store.php?w=4&l=2&j=-14')  # ex) j=-1 one week before
+    html = urlopen('https://dgucoop.dongguk.edu/store/store.php?w=4&l=2&j=0')  # ex) j=-1 one week before
     source = html.read()
     html.close()
 
@@ -64,9 +64,20 @@ def parse_dgu_coop(index):
     tables = table_div.find_all("table")
     menu_table = tables[1]  # second table is the menu table what we are looking for
     menu_tr = menu_table.find_all('tr')  # tr number will be index of cafeteria
-    cafeteria = menu_tr[index]
-    menu_td = cafeteria.find_all('td')
-    result = str(menu_td[day_of_week].span.text)
+    try:
+        cafeteria = menu_tr[index]
+    except IndexError:
+        cafeteria = []
+
+    try:
+        menu_td = cafeteria.find_all('td')
+    except AttributeError:
+        pass
+
+    try:
+        result = str(menu_td[day_of_week].span.text)
+    except UnboundLocalError:
+        result = "데이터가 없습니다."
     # try:
     #     result = str(menu_td[day_of_week].span.text)
     # except AttributeError:
