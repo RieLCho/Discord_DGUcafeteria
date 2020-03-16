@@ -18,6 +18,12 @@ stream_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 logger.addHandler(stream_handler)
 
+html = urlopen('https://dgucoop.dongguk.edu/store/store.php?w=4&l=2&j=0')# ex) j=-1 one week before
+logger.info("dgucoop url opened")
+source = html.read()
+html.close()
+logger.info("dgucoop url closed")
+
 def parse_dgu_coop(index, day_of_week=0):
     logger.info("parse_dgu_coop function start")
     day_of_week += datetime.datetime.today().weekday() + 3
@@ -66,11 +72,6 @@ def parse_dgu_coop(index, day_of_week=0):
         day_of_week -= 1
     elif index is 51:
         day_of_week -= 1
-
-    html = urlopen('https://dgucoop.dongguk.edu/store/store.php?w=4&l=2&j=0')# ex) j=-1 one week before
-    logger.info("dgucoop url opened")
-    source = html.read()
-    html.close()
 
     tasty_soup = BeautifulSoup(source, "lxml")
     table_div = tasty_soup.find(id="sdetail")  # menu table is inside sdetail div

@@ -1,3 +1,5 @@
+# made by Yangjin Cho.
+
 import time
 import discord
 import DonggukCafeteria
@@ -58,7 +60,7 @@ class MenuCollection:
     dormitory_lunch = discord.Embed(title='남산학사(기숙사)식당 중식 메뉴', description='\n----- 남산학사 조식뷔페 -----\n' + DonggukCafeteria.parse_dgu_coop(
         46, day) + '\n----- 남산학사 A코너 -----\n' + DonggukCafeteria.parse_dgu_coop(
         47, day) + '\n----- 남산학사 B코너 -----\n' + DonggukCafeteria.parse_dgu_coop(
-        49, day) + '\n----- 남산학사 푸드코트 -----\n' + DonggukCafeteria.parse_dgu_coop(51), color=0x00ff00)
+        49, day) + '\n----- 남산학사 푸드코트 -----\n' + DonggukCafeteria.parse_dgu_coop(51, day), color=0x00ff00)
     dormitory_dinner = discord.Embed(title='남산학사(기숙사)식당 석식 메뉴', description='\n----- 남산학사 조식뷔페 -----\n' + DonggukCafeteria.parse_dgu_coop(
         46, day) + '\n----- 남산학사 A코너 -----\n' + DonggukCafeteria.parse_dgu_coop(
         48, day) + '\n----- 남산학사 B코너 -----\n' + DonggukCafeteria.parse_dgu_coop(
