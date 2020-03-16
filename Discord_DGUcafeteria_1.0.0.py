@@ -181,103 +181,112 @@ async def on_message(message):
         diver_embed = discord.Embed(title="현재 세계선 다이버전스", description='1.130426%', color=0x0000ff)
         await message.channel.send(embed=diver_embed)
 
-    elif message.content.startswith('!내일식단'):
-        embed_tomorrow = discord.Embed(title="내일 식단을 가져옵니다.", description='명령어를 입력해주세요.', color=0x0000ff)
-        await message.channel.send(embed=embed_tomorrow)
-        msg = await message.channel.wait_for_message(timeout=15.0, author=message.author)
-        MenuCollection.day = 1
-
-        if msg is None:
-            MenuCollection.day -= 1
-            embed_error = discord.Embed(title='15초로 내로 입력해주세요.', description='다시시도: !내일식단', color=0xff0000)
-            await message.channel.send(embed=embed_error)
-            logger.info("error")
-
-        elif message.content.startswith('!상록원3층'):
-            if hour >= 14:  # 오후 2시 이후에는 석식 메뉴를 보여줌
-                await message.channel.send(embed=MenuCollection.sangrokwon3fdinner)
-                logger.info("Tomorrow's sangrokwon3fdinner sent")
-            else:
-                await message.channel.send(embed=MenuCollection.sangrokwon3flunch)
-                logger.info("Tomorrow's sangrokwon3flunch sent")
-        elif message.content.startswith('!석식상록원3층'):
-            await message.channel.send(embed=MenuCollection.sangrokwon3fdinner)
-            logger.info("Tomorrow's sangrokwon3fdinner sent")
-
-        elif message.content.startswith('!중식상록원3층'):
-            await message.channel.send(embed=MenuCollection.sangrokwon3flunch)
-            logger.info("Tomorrow's sangrokwon3flunch sent")
-
-        elif message.content.startswith('!상록원2층'):
-            if hour >= 14:
-                await message.channel.send(embed=MenuCollection.sangrokwon2fdinner)
-                logger.info("Tomorrow's sangrokwon2fdinner sent")
-
-            else:
-                await message.channel.send(embed=MenuCollection.sangrokwon2flunch)
-                logger.info("Tomorrow's sangrokwon2flunch sent")
-
-        elif message.content.startswith('!석식상록원2층'):
-            await message.channel.send(embed=MenuCollection.sangrokwon2fdinner)
-            logger.info("Tomorrow's sangrokwon2fdinner sent")
-
-        elif message.content.startswith('!중식상록원2층'):
-            await message.channel.send(embed=MenuCollection.sangrokwon2flunch)
-            logger.info("Tomorrow's sangrokwon2flunch sent")
-
-        elif message.content.startswith('!상록원1층'):
-            await message.channel.send(embed=MenuCollection.sangrokwon1f)
-            logger.info("Tomorrow's sangrokwon1f sent")
-
-        elif message.content.startswith('!그루터기'):
-            if hour >= 14:
-                await message.channel.send(embed=MenuCollection.grutergi_lunch)
-                logger.info("Tomorrow's grutergi_lunch sent")
-
-            else:
-                await message.channel.send(embed=MenuCollection.grutergi_dinner)
-                logger.info("Tomorrow's grutergi_dinner sent")
-
-        elif message.content.startswith('!석식그루터기'):
-            await message.channel.send(embed=MenuCollection.grutergi_lunch)
-            logger.info("Tomorrow's grutergi_dinner sent")
-
-        elif message.content.startswith('!중식그루터기'):
-            await message.channel.send(embed=MenuCollection.grutergi_dinner)
-            logger.info("Tomorrow's grutergi_lunch sent")
-
-
-        elif message.content.startswith('!가든쿡'):
-            await message.channel.send(embed=MenuCollection.gardencook)
-            logger.info("Tomorrow's gardencook sent")
-
-
-        elif message.content.startswith('!누리터'):
-            await message.channel.send(embed=MenuCollection.nuriter)
-            logger.info("Tomorrow's nuriter sent")
-
-
-        elif message.content.startswith('!남산학사'):
-            if hour >= 14:
-                await message.channel.send(embed=MenuCollection.dormitory_dinner)
-                logger.info("Tomorrow's dormitory_dinner sent")
-
-            else:
-                await message.channel.send(embed=MenuCollection.dormitory_lunch)
-                logger.info("Tomorrow's dormitory_lunch sent")
-
-        elif message.content.startswith('!석식남산학사'):
-            await message.channel.send(embed=MenuCollection.dormitory_dinner)
-            logger.info("Tomorrow's dormitory_dinner sent")
-
-        elif message.content.startswith('!중식남산학사'):
-            await message.channel.send(embed=MenuCollection.dormitory_lunch)
-            logger.info("Tomorrow's dormitory_lunch sent")
-
-        else:
-            MenuCollection.day -= 1
-            embed_error = discord.Embed(title='잘못된 명령어입니다.', description='다시시도: !내일식단', color=0xff0000)
-            await message.channel.send(embed=embed_error)
-            logger.info("error")
+    # elif message.content.startswith('!내일식단'):
+    #     embed_tomorrow = discord.Embed(title="내일 식단을 가져옵니다.", description='명령어를 입력해주세요.', color=0x0000ff)
+    #     await message.channel.send(embed=embed_tomorrow)
+    #
+    #     def check(m):
+    #         return m.content == '!상록원3층'
+    #     msg = await client.wait_for('message', check=check)
+    #     if msg is None:
+    #         MenuCollection.day -= 1
+    #         embed_error = discord.Embed(title='15초로 내로 입력해주세요.', description='다시시도: !내일식단', color=0xff0000)
+    #         await message.channel.send(embed=embed_error)
+    #         logger.info("error")
+    #     MenuCollection.day = 1
+    #     if hour >= 14:  # 오후 2시 이후에는 석식 메뉴를 보여줌
+    #         await message.channel.send(embed=MenuCollection.sangrokwon3fdinner)
+    #         logger.info("Tomorrow's sangrokwon3fdinner sent")
+    #     else:
+    #         await message.channel.send(embed=MenuCollection.sangrokwon3flunch)
+    #         logger.info("Tomorrow's sangrokwon3flunch sent")
+    #
+    #
+    #     elif message.content.startswith('!상록원3층'):
+    #         if hour >= 14:  # 오후 2시 이후에는 석식 메뉴를 보여줌
+    #             await message.channel.send(embed=MenuCollection.sangrokwon3fdinner)
+    #             logger.info("Tomorrow's sangrokwon3fdinner sent")
+    #         else:
+    #             await message.channel.send(embed=MenuCollection.sangrokwon3flunch)
+    #             logger.info("Tomorrow's sangrokwon3flunch sent")
+    #     elif message.content.startswith('!석식상록원3층'):
+    #         await message.channel.send(embed=MenuCollection.sangrokwon3fdinner)
+    #         logger.info("Tomorrow's sangrokwon3fdinner sent")
+    #
+    #     elif message.content.startswith('!중식상록원3층'):
+    #         await message.channel.send(embed=MenuCollection.sangrokwon3flunch)
+    #         logger.info("Tomorrow's sangrokwon3flunch sent")
+    #
+    #     elif message.content.startswith('!상록원2층'):
+    #         if hour >= 14:
+    #             await message.channel.send(embed=MenuCollection.sangrokwon2fdinner)
+    #             logger.info("Tomorrow's sangrokwon2fdinner sent")
+    #
+    #         else:
+    #             await message.channel.send(embed=MenuCollection.sangrokwon2flunch)
+    #             logger.info("Tomorrow's sangrokwon2flunch sent")
+    #
+    #     elif message.content.startswith('!석식상록원2층'):
+    #         await message.channel.send(embed=MenuCollection.sangrokwon2fdinner)
+    #         logger.info("Tomorrow's sangrokwon2fdinner sent")
+    #
+    #     elif message.content.startswith('!중식상록원2층'):
+    #         await message.channel.send(embed=MenuCollection.sangrokwon2flunch)
+    #         logger.info("Tomorrow's sangrokwon2flunch sent")
+    #
+    #     elif message.content.startswith('!상록원1층'):
+    #         await message.channel.send(embed=MenuCollection.sangrokwon1f)
+    #         logger.info("Tomorrow's sangrokwon1f sent")
+    #
+    #     elif message.content.startswith('!그루터기'):
+    #         if hour >= 14:
+    #             await message.channel.send(embed=MenuCollection.grutergi_lunch)
+    #             logger.info("Tomorrow's grutergi_lunch sent")
+    #
+    #         else:
+    #             await message.channel.send(embed=MenuCollection.grutergi_dinner)
+    #             logger.info("Tomorrow's grutergi_dinner sent")
+    #
+    #     elif message.content.startswith('!석식그루터기'):
+    #         await message.channel.send(embed=MenuCollection.grutergi_lunch)
+    #         logger.info("Tomorrow's grutergi_dinner sent")
+    #
+    #     elif message.content.startswith('!중식그루터기'):
+    #         await message.channel.send(embed=MenuCollection.grutergi_dinner)
+    #         logger.info("Tomorrow's grutergi_lunch sent")
+    #
+    #
+    #     elif message.content.startswith('!가든쿡'):
+    #         await message.channel.send(embed=MenuCollection.gardencook)
+    #         logger.info("Tomorrow's gardencook sent")
+    #
+    #
+    #     elif message.content.startswith('!누리터'):
+    #         await message.channel.send(embed=MenuCollection.nuriter)
+    #         logger.info("Tomorrow's nuriter sent")
+    #
+    #
+    #     elif message.content.startswith('!남산학사'):
+    #         if hour >= 14:
+    #             await message.channel.send(embed=MenuCollection.dormitory_dinner)
+    #             logger.info("Tomorrow's dormitory_dinner sent")
+    #
+    #         else:
+    #             await message.channel.send(embed=MenuCollection.dormitory_lunch)
+    #             logger.info("Tomorrow's dormitory_lunch sent")
+    #
+    #     elif message.content.startswith('!석식남산학사'):
+    #         await message.channel.send(embed=MenuCollection.dormitory_dinner)
+    #         logger.info("Tomorrow's dormitory_dinner sent")
+    #
+    #     elif message.content.startswith('!중식남산학사'):
+    #         await message.channel.send(embed=MenuCollection.dormitory_lunch)
+    #         logger.info("Tomorrow's dormitory_lunch sent")
+    #
+    #     else:
+    #         MenuCollection.day -= 1
+    #         embed_error = discord.Embed(title='잘못된 명령어입니다.', description='다시시도: !내일식단', color=0xff0000)
+    #         await message.channel.send(embed=embed_error)
+    #         logger.info("input error")
 
 client.run('token')
