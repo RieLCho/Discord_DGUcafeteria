@@ -4,11 +4,23 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import datetime
+import logging
 
 counter = 0
 
-def parse_dgu_coop(index):
-    day_of_week = datetime.datetime.today().weekday() + 3
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+file_handler = logging.FileHandler("DonggukCafeteria.py.log")
+file_handler.setFormatter(formatter)
+stream_handler = logging.StreamHandler()
+stream_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
+logger.addHandler(stream_handler)
+
+def parse_dgu_coop(index, day_of_week=0):
+    logger.info("parse_dgu_coop function start")
+    day_of_week += datetime.datetime.today().weekday() + 3
     # Sun = 2, Mon = 3, Tue = 4, Wen = 5, Thu = 6, Fri = 7, Sat = 8 (td index)
     if index is 3:  # 석식 메뉴의 경우 -1
         day_of_week -= 1
@@ -54,13 +66,18 @@ def parse_dgu_coop(index):
         day_of_week -= 1
     elif index is 51:
         day_of_week -= 1
-    html = urlopen('https://dgucoop.dongguk.edu/store/store.php?w=4&l=2&j=0')  # ex) j=-1 one week before
+
+    html = urlopen('https://dgucoop.dongguk.edu/store/store.php?w=4&l=2&j=0')# ex) j=-1 one week before
+    logger.info("dgucoop url opened")
     source = html.read()
     html.close()
 
     tasty_soup = BeautifulSoup(source, "lxml")
     table_div = tasty_soup.find(id="sdetail")  # menu table is inside sdetail div
-    tables = table_div.find_all("table")
+    try:
+        tables = table_div.find_all("table")
+    except AttributeError:
+        pass
     menu_table = tables[1]  # second table is the menu table what we are looking for
     menu_tr = menu_table.find_all('tr')  # tr number will be index of cafeteria
     try:
@@ -87,5 +104,5 @@ def parse_dgu_coop(index):
     global counter
     counter -= -1
     print('DonggukCafeteria.py: Module load OK.' + '[' + str(counter) + '/41]')
+    logger.info("parse_dgu_coop function end")
     return result
-
