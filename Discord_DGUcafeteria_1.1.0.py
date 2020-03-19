@@ -311,13 +311,14 @@ async def on_message(message):
         logger.info("Today's dormitory_lunch sent")
 
     elif message.content.startswith('!동식아'):
-        embed = discord.Embed(title="동국대도 식후경 봇 명령어", description='!상록원3층\n!상록원2층\n!상록원1층\n!그루터기\n!가든쿡\n!남산학사', color=0x00ff00)
+        embed = discord.Embed(title="동국대도 식후경 봇 명령어", description='!상록원3층\n!상록원2층\n!상록원1층\n!그루터기\n!가든쿡\n!남산학사\n!만든사람', color=0x00ff00)
         await message.channel.send(embed=embed)
         await message.channel.send('자세한 설명은 !동식명령어 에서 확인하실 수 있습니다.')
         logger.info("Help requested")
 
     elif message.content.startswith('!동식명령어'):
-        await message.channel.send('동국대도 식후경 봇 명령어\n!만든사람\n!중식0000 or !석식0000을 통해 중식혹은 석식을 확인할 수 있습니다.\n(기본적으로는 시간에 따라 알맞는 메뉴를 보여줍니다.)\nex)!석식상록원3층')
+        detail_help_embed = discord.Embed(title="동국대도 식후경 봇 고급명령어", description='!중식0000 or !석식0000을 통해 중식혹은 석식을 확인할 수 있습니다.\n(기본적으로는 시간에 따라 알맞는 메뉴를 보여줍니다.)\nex)!석식상록원3층', color=0x00ff00)
+        await message.channel.send(embed=detail_help_embed)
         logger.info("Detailed help requested")
 
     elif message.content.startswith('!만든사람'):
