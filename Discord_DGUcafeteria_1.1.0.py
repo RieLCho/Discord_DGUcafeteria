@@ -328,7 +328,7 @@ async def on_message(message):
         logger.info("Today's dormitory_lunch sent")
 
     elif message.content.startswith('!동식아'):
-        embed = discord.Embed(title="동국대도 식후경 봇 명령어", description='!상록원3층\n!상록원2층\n!상록원1층\n!그루터기\n!가든쿡\n!남산학사\n!만든사람', color=0x00ff00)
+        embed = discord.Embed(title="동국대도 식후경 봇 명령어", description='!상록원3층\n!상록원2층\n!상록원1층\n!그루터기\n!가든쿡\n!남산학사(!기숙사)\n!만든사람', color=0x00ff00)
         await message.channel.send(embed=embed)
         await message.channel.send('자세한 설명은 !동식명령어 에서 확인하실 수 있습니다.')
         logger.info("Help requested")
