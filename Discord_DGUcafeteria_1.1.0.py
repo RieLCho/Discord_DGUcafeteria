@@ -1,6 +1,7 @@
 # made by Yangjin Cho.
 # Check for latest release at https://github.com/sheepjin99/DonggukCafeteria/releases.
 
+import random
 import time
 import discord
 from urllib.request import urlopen
@@ -11,7 +12,6 @@ secs = time.time()
 tm = time.localtime(secs)
 hour = tm.tm_hour
 client = discord.Client()
-
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -268,7 +268,6 @@ async def on_message(message):
         await message.channel.send(embed=MenuCollection.sangrokwon1f)
         logger.info("Today's sangrokwon1f sent")
 
-
     elif message.content.startswith('!그루터기'):
         if hour >= 14:
             await message.channel.send(embed=MenuCollection.grutergi_lunch)
@@ -286,16 +285,13 @@ async def on_message(message):
         await message.channel.send(embed=MenuCollection.grutergi_dinner)
         logger.info("Today's grutergi_lunch sent")
 
-
     elif message.content.startswith('!가든쿡'):
         await message.channel.send(embed=MenuCollection.gardencook)
         logger.info("Today's gardencook sent")
 
-
     # elif message.content.startswith('!누리터'):
     #     await message.channel.send(embed=MenuCollection.nuriter)
     #     logger.info("Today's nuriter sent")
-
 
     elif message.content.startswith('!남산학사'):
         if hour >= 14:
@@ -318,21 +314,27 @@ async def on_message(message):
         embed = discord.Embed(title="동국대도 식후경 봇 명령어", description='!상록원3층\n!상록원2층\n!상록원1층\n!그루터기\n!가든쿡\n!남산학사', color=0x00ff00)
         await message.channel.send(embed=embed)
         await message.channel.send('자세한 설명은 !동식명령어 에서 확인하실 수 있습니다.')
-        logger.info("help requested")
-
+        logger.info("Help requested")
 
     elif message.content.startswith('!동식명령어'):
-        await message.channel.send('동국대도 식후경 봇 명령어\n!만든사람\n!중식0000 or !석식0000을 통해 중식혹은 석식을 확인할 수 있습니다. (기본적으로는 시간에 따라 알맞는 메뉴를 보여줍니다.) ex)!석식상록원3층')
-        logger.info("detailed help requested")
+        await message.channel.send('동국대도 식후경 봇 명령어\n!만든사람\n!중식0000 or !석식0000을 통해 중식혹은 석식을 확인할 수 있습니다.\n(기본적으로는 시간에 따라 알맞는 메뉴를 보여줍니다.)\nex)!석식상록원3층')
+        logger.info("Detailed help requested")
 
     elif message.content.startswith('!만든사람'):
-        developer_embed = discord.Embed(title='동식이 아빠', description='동국대학교 컴퓨터공학과 19학번 조양진\n버그문의는 깃헙 이슈 혹은 이메일로 부탁드려요.\nhttps://github.com/sheepjin99/Discord_DGUcafeteria\nEmail:7033942cyj@dgu.ac.kr', color=0xff0000)
+        developer_embed = discord.Embed(title='동식이 아빠', description='동국대학교 컴퓨터공학과 19학번 조양진\n버그문의는 깃헙 이슈 혹은 이메일로 부탁드려요.\nhttps://github.com/sheepjin99/Discord_DGUcafeteria\nEmail:7033942cyj@dgu.ac.kr', color=0xffdc6a)
         await message.channel.send(embed=developer_embed)
         await message.channel.send('!엘프사이콩그루')
-        logger.info("credit requested")
+        logger.info("Credit requested")
 
     elif message.content.startswith('!엘프사이콩그루'):
-        diver_embed = discord.Embed(title="현재 세계선 다이버전스", description='1.130426%', color=0x0000ff)
+        add = random.random()
+        adder = random.random()
+        divergence = add + adder
+        if divergence > 2.0:
+            divergence -= 1.0
+        divergence = round(divergence, 6)
+        divergence = str(divergence)
+        diver_embed = discord.Embed(title="현재 세계선 다이버전스", description=divergence+'%', color=0xffdc6a)
         await message.channel.send(embed=diver_embed)
 
 client.run('token')
