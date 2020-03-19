@@ -88,12 +88,12 @@ def parse_dgu_coop(index, day_of_week=0):
 
     try:
         menu_td = cafeteria.find_all('td')
-    except AttributeError:
+    except AttributeError and UnboundLocalError:
         pass
 
     try:
         result = str(menu_td[day_of_week].span.text)
-    except UnboundLocalError:
+    except UnboundLocalError and IndexError:
         result = "데이터가 없습니다."
     # try:
     #     result = str(menu_td[day_of_week].span.text)

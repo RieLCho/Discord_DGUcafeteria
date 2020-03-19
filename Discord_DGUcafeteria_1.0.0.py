@@ -20,7 +20,6 @@ stream_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 logger.addHandler(stream_handler)
 
-
 class MenuCollection:
     day = 0
     sangrokwon3flunch = discord.Embed(title="상록원 3층 중식메뉴", description="\n----- 상록원 집밥 -----\n" + DonggukCafeteria.parse_dgu_coop(
