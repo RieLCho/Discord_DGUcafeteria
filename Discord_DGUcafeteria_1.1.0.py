@@ -321,7 +321,7 @@ async def on_message(message):
         logger.info("Detailed help requested")
 
     elif message.content.startswith('!만든사람'):
-        developer_embed = discord.Embed(title='동식이 아빠', description='동국대학교 컴퓨터공학과 19학번 조양진\n버그문의는 깃헙 이슈 혹은 이메일로 부탁드려요.\nhttps://github.com/sheepjin99/Discord_DGUcafeteria\nEmail:7033942cyj@dgu.ac.kr', color=0xffdc6a)
+        developer_embed = discord.Embed(title='동국대도 식후경', description='동국대학교 컴퓨터공학과 19학번 조양진\n버그문의는 깃헙 이슈 혹은 이메일로 부탁드려요.\nhttps://github.com/sheepjin99/Discord_DGUcafeteria\nEmail:7033942cyj@dgu.ac.kr', color=0xffdc6a)
         await message.channel.send(embed=developer_embed)
         await message.channel.send('!엘프사이콩그루')
         logger.info("Credit requested")
