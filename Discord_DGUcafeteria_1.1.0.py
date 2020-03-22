@@ -527,4 +527,4 @@ async def on_message(message):
         diver_embed = discord.Embed(title="현재 세계선 다이버전스", description=divergence+'%', color=0xffdc6a)
         await message.channel.send(embed=diver_embed)
 
-client.run('token')
+client.run('Njg2NTgxNDY4OTAxODAyMDM1.Xnefew.4ESoC-PzbCUfb3obLINMti7DWqc')
