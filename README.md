@@ -6,7 +6,7 @@
 
 ## 시작해볼까요?
 
-기존에 사용하던 카카오톡 동국대학교 응답봇이 api 지원 종료에 따라 운영을 종료해서 제가 쓰려고 만들었어요. 우리학교 밥 진짜 맛있거든요 ㅎㅎ (돈치퐁 사주세요)
+기존에 사용하던 카카오톡 동국대학교 응답봇이 api 지원 종료되어 서비스가 없어져서 제가 쓰려고 만들었어요. 우리학교 밥 진짜 맛있거든요 ㅎㅎ (돈치퐁 사주세요 '~')
 
 ## 동식이를 서버에 추가하는 방법
 
@@ -40,8 +40,8 @@
 ```
 discord
 BeautifulSoup
-logging
 schedule
+logging
 ```
 동식이를 빌드하려면 위와 같은 패키지를 미리 설치하셔야 합니다.
 
@@ -79,12 +79,13 @@ crontab이나 여타 스케쥴러를 사용할 필요 없이, 동식이는 자�
 
 * **동국대학교 컴퓨터공학과 19학번 조양진** - [github](https://github.com/sheepjin99), [facebook](https://www.facebook.com/profile.php?id=100014648160911), [tistory](https://sheepjin99.tistory.com/)
 
-## License
+## 라이센스
 
-동식이는 MIT 라이선스를 사용합니다. [LICENSE.md](LICENSE.md)를 참고해주세요!
+동식이는 MIT 라이센스를 사용합니다. [LICENSE.md](LICENSE.md)를 참고해주세요! 
 
-## Acknowledgments
+## Thanks to ...
 
 * 심심했던 방학동안 재밌게 봤던 슈타인즈게이트 제로
 * 바보같은 코드를 지적해준 내 트친들
-* 그리고 훌륭한 패키지(Discord,BS4,Schedule)를 만드신 개발자분들
+* 훌륭한 패키지(Discord,BS4,Schedule)를 만드신 개발자분들
+* 그리고 동식이를 사용해주는 당신♥
