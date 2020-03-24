@@ -554,7 +554,7 @@ def job():
     client.run('token')
 
 schedule.every().day.at("00:00").do(job)
-
+job()
 while True:
     schedule.run_pending()
     time.sleep(1)
