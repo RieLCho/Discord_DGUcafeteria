@@ -69,7 +69,7 @@ crontab이나 여타 스케쥴러를 사용할 필요 없이, 동식이는 자�
 
 ## 디스코드 봇 만드는 방법이 궁금하다면?
 
-* [학식 데이터를 크롤링하는 파이썬코드로 디스코드 학식 봇 만들기](https://sheepjin99.tistory.com/21)
+[학식 데이터를 크롤링하는 파이썬코드로 디스코드 학식 봇 만들기](https://sheepjin99.tistory.com/21)
 
 ## 기여하기
 
@@ -78,7 +78,7 @@ crontab이나 여타 스케쥴러를 사용할 필요 없이, 동식이는 자�
 
 ## 만든사람
 
-* **동국대학교 컴퓨터공학과 19학번 조양진** - [github](https://github.com/sheepjin99), [facebook](https://www.facebook.com/profile.php?id=100014648160911), [tistory](https://sheepjin99.tistory.com/)
+**동국대학교 컴퓨터공학과 19학번 조양진** - [github](https://github.com/sheepjin99), [facebook](https://www.facebook.com/profile.php?id=100014648160911), [tistory](https://sheepjin99.tistory.com/)
 
 ## 라이센스
 
