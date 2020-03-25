@@ -15,6 +15,10 @@
 동식이는 [이곳에서](https://discordapp.com/oauth2/authorize?client_id=686581468901802035&permissions=67584&scope=bot) 서버에 추가할 수 있습니다!
 
 현재 제 개인서버에서 운영되고 있어요.
+기본적으로 동식이가 오프라인이면 잠시 수정/점검하고 있는거에요.
+```
+ping kraint.sheepjin99.kro.kr //이 명령어로 서버 상태를 확인할 수 있습니다.
+```
 
 ## 동식이 명령어 셋
 
