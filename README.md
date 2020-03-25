@@ -73,7 +73,7 @@ crontab이나 여타 스케쥴러를 사용할 필요 없이, 동식이는 자�
 
 ## 기여하기
 
-동국대학교 학생이라면 누구나 이슈, 풀리퀘스트를 요청하실 수 있습니다.
+누구나 이슈, 풀리퀘스트를 요청하실 수 있습니다.
 기여자 목록은 [여기서](https://github.com/sheepjin99/Discord_DGUcafeteria/graphs/contributors) 확인하실 수 있어요!
 
 ## 만든사람
