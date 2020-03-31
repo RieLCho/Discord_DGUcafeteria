@@ -6,7 +6,8 @@
 
 ## 시작해볼까요?
 
-기존에 사용하던 카카오톡 동국대학교 응답봇이 api 지원 종료되어 서비스가 없어져서 제가 쓰려고 만들었어요. 우리학교 밥 진짜 맛있거든요 ㅎㅎ (돈치퐁 사주세요 '~')
+기존에 사용하던 카카오톡 동국대학교 응답봇이 api 지원 종료되어 서비스가 없어져서 제가 쓰려고 만들었어요.  
+우리학교 밥 진짜 맛있거든요 ㅎㅎ (돈치퐁 사주세요 '~')  
 
 ## 동식이를 서버에 추가하는 방법
 
@@ -51,18 +52,17 @@ logging
 
 ## 동식이를 빌드&배치하는 방법
 
-동식이는 서버에서 돌아가는 환경을 전제로 만들어졌습니다.
-
+동식이는 서버에서 돌아가는 환경을 전제로 만들어졌습니다.  
 ```
 ~ git clone https://github.com/sheepjin99/Discord_DGUcafeteria
 ~ cd Discord_DGUcafeteria
 ~ nano -e Discord_DGUcafeteria_1.2.0.py
 ```
-이후 client.run('token')을 봇 토큰으로 교체
+이후 client.run('token')을 봇 토큰으로 교체  
 ```
 ~ python3 Discord_DGUcafeteria_1.2.0.py
 ```
-Crontab을 사용하여 매일 스크립트를 재실행합시다.
+Crontab을 사용하여 매일 스크립트를 재실행합시다.  
 ```
 sudo crontab -e
 0 0 * * * sudo reboot
@@ -72,9 +72,9 @@ sudo crontab -e
 
 ## 동식이는 뭘로 만들었냐면요
 
-* [Python 3.7](https://www.python.org/) - 파이떤!
+* [Python 3.7](https://www.python.org/) - 파이썬!
 * [Discord.py](https://github.com/Rapptz/discord.py) - 디스코드 봇을 아주 쉽게 만들게끔 해주는 훌륭한 패키지
-* [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) - 동국대학교 생활협동조합 모바일 페이지 크롤링
+* [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) - 동국대학교 생활협동조합 모바일 페이지 크롤
 
 ## 디스코드 봇 만드는 방법이 궁금하다면?
 
