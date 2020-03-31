@@ -62,8 +62,13 @@ logging
 ```
 ~ python3 Discord_DGUcafeteria_1.2.0.py
 ```
-
-crontab이나 여타 스케쥴러를 사용할 필요 없이, 동식이는 자동적으로 00:00에 웹페이지를 다시 크롤링해서, 그 날의 학식데이터와 그 다음날의 데이터를 가져옵니다.
+Crontab을 사용하여 매일 스크립트를 재실행합시다.
+```
+sudo crontab -e
+0 0 * * * sudo reboot
+@reboot python3 /path/to/git_clone/Discord_DGUcafeteria/Discord_DGUcafeteria_1.2.0.py
+```
+혹시 기본 python 버전이 서버에 지정되어 있지 않으면 /usr/bin/python3.n(본인이 설치한 버전)으로 바꿔주세요.
 
 ## 동식이는 뭘로 만들었냐면요
 
