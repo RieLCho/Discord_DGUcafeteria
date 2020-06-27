@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ccce1aef-f0b1-45e4-97ae-301361901913" name="Default Changelist" comment="" />
+    <list default="true" id="ccce1aef-f0b1-45e4-97ae-301361901913" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +29,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Moca_finder" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -161,10 +163,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1106" y="278" key="FileChooserDialogImpl" timestamp="1585053726213">
+    <state x="1106" y="278" key="FileChooserDialogImpl" timestamp="1585588617811">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1106" y="278" key="FileChooserDialogImpl/0.0.1920.1040/-1680.32.1680.1010@0.0.1920.1040" timestamp="1585053726213" />
+    <state x="1106" y="278" key="FileChooserDialogImpl/0.0.1920.1040/-1680.32.1680.1010@0.0.1920.1040" timestamp="1585588617811" />
     <state width="1899" height="271" key="GridCell.Tab.0.bottom" timestamp="1585121664207">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
