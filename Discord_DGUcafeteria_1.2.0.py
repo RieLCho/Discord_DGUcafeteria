@@ -113,10 +113,7 @@ def sangrok_3f(tr, td, day=0):
         tasty_soup = BeautifulSoup(sang3f_source, "lxml")
     else:
         tasty_soup = BeautifulSoup(tomorrow_sang3f_source, "lxml")
-    table = tasty_soup.find("table")
-    tables = table
-    menu_table = tables  # second table is the menu table what we are looking for
-    menu_tr = menu_table.find_all('tr')  # tr number will be index of cafeteria
+    menu_tr = tasty_soup.find("table").find_all("tr")
     cafeteria = menu_tr[tr]
     for span in tasty_soup.find_all("span"):
         span.replace_with("\n")
@@ -132,10 +129,7 @@ def sangrok_2f(tr, td, day=0):
         tasty_soup = BeautifulSoup(sang2f_source, "lxml")
     else:
         tasty_soup = BeautifulSoup(tomorrow_sang2f_source, "lxml")
-    table = tasty_soup.find("table")
-    tables = table
-    menu_table = tables  # second table is the menu table what we are looking for
-    menu_tr = menu_table.find_all('tr')  # tr number will be index of cafeteria
+    menu_tr = tasty_soup.find("table").find_all("tr")
     cafeteria = menu_tr[tr]
     for span in tasty_soup.find_all("span"):
         span.replace_with("\n")
@@ -150,10 +144,7 @@ def sangrok_1f(tr=1, td=1, day=0):
         tasty_soup = BeautifulSoup(sang1f_source, "lxml")
     else:
         tasty_soup = BeautifulSoup(tomorrow_sang1f_source, "lxml")
-    table = tasty_soup.find("table")
-    tables = table
-    menu_table = tables  # second table is the menu table what we are looking for
-    menu_tr = menu_table.find_all('tr')  # tr number will be index of cafeteria
+    menu_tr = tasty_soup.find("table").find_all("tr")
     cafeteria = menu_tr[tr]
     for span in tasty_soup.find_all("span"):
         span.replace_with("\n")
@@ -168,10 +159,7 @@ def grutergi(tr, td, day=0):
         tasty_soup = BeautifulSoup(grutergi_source, "lxml")
     else:
         tasty_soup = BeautifulSoup(tomorrow_grutergi_source, "lxml")
-    table = tasty_soup.find("table")
-    tables = table
-    menu_table = tables  # second table is the menu table what we are looking for
-    menu_tr = menu_table.find_all('tr')  # tr number will be index of cafeteria
+    menu_tr = tasty_soup.find("table").find_all("tr")
     cafeteria = menu_tr[tr]
     for span in tasty_soup.find_all("span"):
         span.replace_with("\n")
@@ -186,10 +174,7 @@ def grutergi_pan_noodle(tr, td, day=0):
         tasty_soup = BeautifulSoup(pan_noodle_source, "lxml")
     else:
         tasty_soup = BeautifulSoup(tomorrow_pan_noodle_source, "lxml")
-    table = tasty_soup.find("table")
-    tables = table
-    menu_table = tables  # second table is the menu table what we are looking for
-    menu_tr = menu_table.find_all('tr')  # tr number will be index of cafeteria
+    menu_tr = tasty_soup.find("table").find_all("tr")
     cafeteria = menu_tr[tr]
     for span in tasty_soup.find_all("span"):
         span.replace_with("\n")
@@ -205,10 +190,7 @@ def gardencook(tr, td, day=0):
         tasty_soup = BeautifulSoup(gardencook_source, "lxml")
     else:
         tasty_soup = BeautifulSoup(tomorrow_gardencook_source, "lxml")
-    table = tasty_soup.find("table")
-    tables = table
-    menu_table = tables  # second table is the menu table what we are looking for
-    menu_tr = menu_table.find_all('tr')  # tr number will be index of cafeteria
+    menu_tr = tasty_soup.find("table").find_all("tr")
     cafeteria = menu_tr[tr]
     for span in tasty_soup.find_all("span"):
         span.replace_with("\n")
@@ -223,10 +205,7 @@ def dormitory(tr, td,day=0):
         tasty_soup = BeautifulSoup(dorm_source, "lxml")
     else:
         tasty_soup = BeautifulSoup(tomorrow_dorm_source, "lxml")
-    table = tasty_soup.find("table")
-    tables = table
-    menu_table = tables  # second table is the menu table what we are looking for
-    menu_tr = menu_table.find_all('tr')  # tr number will be index of cafeteria
+    menu_tr = tasty_soup.find("table").find_all("tr")
     cafeteria = menu_tr[tr]
     for span in tasty_soup.find_all("span"):
         span.replace_with("\n")
