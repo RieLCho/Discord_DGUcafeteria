@@ -1,3 +1,30 @@
+#!/usr/local/bin/python3
+
+'''
+version: 1.2.0
+
+MIT License
+
+Copyright (c) 2020 RieL
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+'''
 # made by Yangjin Cho.
 # Check for latest release at https://github.com/sheepjin99/DonggukCafeteria/releases.
 
@@ -15,7 +42,8 @@ import schedule
 d = datetime.datetime.now()
 d = d.replace(minute=00, hour=00, second=00)
 d = (int(time.mktime(d.timetuple())))  # one day = 86400
-posix = "&sday="+str(d)
+posix = str(d)
+posix_param = "&sday="+posix
 
 secs = time.time()
 tm = time.localtime(secs)
@@ -25,7 +53,7 @@ client = discord.Client()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-file_handler = logging.FileHandler("Discord_DGUcafeteria_1.2.0.py_"+posix+".log")
+file_handler = logging.FileHandler("Discord_DGUcafeteria-"+posix+".log")
 file_handler.setFormatter(formatter)
 stream_handler = logging.StreamHandler()
 stream_handler.setFormatter(formatter)
@@ -34,76 +62,76 @@ logger.addHandler(stream_handler)
 
 logger.info("Repeated Function Start")
 
-html = urlopen("http://dgucoop.dongguk.edu/mobile/menu.html?code=5"+posix)
+html = urlopen("http://dgucoop.dongguk.edu/mobile/menu.html?code=5"+posix_param)
 logger.info("Sangrokwon3f DGUcoop Website Opened")
 sang3f_source = html.read()
 html.close()
 
-html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=1' + posix)
+html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=1' + posix_param)
 logger.info("Sangrokwon2f DGUcoop Website Opened")
 sang2f_source = html.read()
 html.close()
 
-html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=7'+posix)
+html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=7'+posix_param)
 logger.info("Sangrokwon1f DGUcoop Website Opened")
 sang1f_source = html.read()
 html.close()
 
-html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=2'+posix)
+html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=2'+posix_param)
 logger.info("Grutergi DGUcoop Website Opened")
 grutergi_source = html.read()
 html.close()
 
-html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=0'+posix)
+html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=0'+posix_param)
 logger.info("Pan & Noodle DGUcoop Website Opened")
 pan_noodle_source = html.read()
 html.close()
 
-html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=9'+posix)
+html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=9'+posix_param)
 logger.info("GardenCook DGUcoop Website Opened")
 gardencook_source = html.read()
 html.close()
 
-html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=8'+posix)
+html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=8'+posix_param)
 logger.info("Dormitory DGUcoop Website Opened")
 dorm_source = html.read()
 html.close()
 
 ##############################################################################
 d += 86400
-posix = "&sday="+str(d)
+posix_param = "&sday="+str(d)
 
-html = urlopen("http://dgucoop.dongguk.edu/mobile/menu.html?code=5"+posix)
+html = urlopen("http://dgucoop.dongguk.edu/mobile/menu.html?code=5"+posix_param)
 logger.info("Tomorrow Sangrokwon3f DGUcoop Website Opened")
 tomorrow_sang3f_source = html.read()
 html.close()
 
-html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=1' + posix)
+html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=1' + posix_param)
 logger.info("Tomorrow Sangrokwon2f DGUcoop Website Opened")
 tomorrow_sang2f_source = html.read()
 html.close()
 
-html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=7'+posix)
+html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=7'+posix_param)
 logger.info("Tomorrow Sangrokwon1f DGUcoop Website Opened")
 tomorrow_sang1f_source = html.read()
 html.close()
 
-html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=2'+posix)
+html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=2'+posix_param)
 logger.info("Tomorrow Grutergi DGUcoop Website Opened")
 tomorrow_grutergi_source = html.read()
 html.close()
 
-html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=0'+posix)
+html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=0'+posix_param)
 logger.info("Tomorrow Pan & Noodle DGUcoop Website Opened")
 tomorrow_pan_noodle_source = html.read()
 html.close()
 
-html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=9'+posix)
+html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=9'+posix_param)
 logger.info("Tomorrow GardenCook DGUcoop Website Opened")
 tomorrow_gardencook_source = html.read()
 html.close()
 
-html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=8'+posix)
+html = urlopen('http://dgucoop.dongguk.edu/mobile/menu.html?code=8'+posix_param)
 logger.info("Tomorrow Dormitory DGUcoop Website Opened")
 tomorrow_dorm_source = html.read()
 html.close()
