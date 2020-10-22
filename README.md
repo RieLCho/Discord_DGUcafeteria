@@ -44,12 +44,13 @@ ping kraint.sheepjin99.kro.kr //이 명령어로 서버 상태를 확인할 수 
 동식이는 [동국대학교 학식 모듈](https://github.com/sheepjin99/DonggukCafeteria)을 기반으로 만들어졌습니다.  
 
 ```
-discord
-BeautifulSoup
-schedule
-logging
+discord.py==1.5.1
+bs4==0.0.1
+schedule==0.6.0
+lxml==4.6.1
 ```
 동식이를 빌드하려면 위와 같은 패키지를 미리 설치하셔야 합니다.
+이 리스트는 [requirements.txt](https://github.com/RieLCho/Discord_DGUcafeteria/blob/master/requirements.txt)에서도 확인할 수 있습니다.
 
 ## 동식이를 빌드&배치하는 방법
 
