@@ -1,3 +1,5 @@
+#!/usr/local/bin/python3
+
 # v1.2.0
 
 # made by Yangjin Cho.
