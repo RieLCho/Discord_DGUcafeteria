@@ -1,3 +1,5 @@
+# v1.2.0
+
 # made by Yangjin Cho.
 # Check for latest release at https://github.com/sheepjin99/DonggukCafeteria/releases.
 
